@@ -9,6 +9,7 @@
   "author": "jiawei23716@sina.com",
   "license": "ISC",
   "dependencies": {
+    "loader-utils": "^0.2.15",
     "vdt": "*"
   }
 }
