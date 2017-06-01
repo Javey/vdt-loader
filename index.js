@@ -18,7 +18,7 @@ module.exports = function(source) {
     query = Object.assign({
         noWith: true, 
         onlySource: true, 
-        delimiters: ['{{', '}}']
+        delimiters: ['{', '}']
     }, query);
 
     var template =  Vdt.compile(source, query);
