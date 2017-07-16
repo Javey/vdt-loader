@@ -1,6 +1,7 @@
 var Vdt = require('vdt'),
     loaderUtils = require('loader-utils');
 
+// module.exports = function() {};
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
 
@@ -21,7 +22,24 @@ module.exports = function(source) {
         delimiters: ['{', '}']
     }, query);
 
-    var template =  Vdt.compile(source, query);
-
-    return 'module.exports = ' + template.source;
+    source = Vdt.compile(source, query).source;
+    var pos = source.indexOf('\n');
+    return [
+        'module.exports = ' + source.substr(0, pos),
+        'if (module.hot) {',
+        '    var __this = this;',
+        '    module.hot.dispose(function(data) {',
+        '        data.vdt = __this;',
+        '    })',
+        '}',
+        source.substr(pos),
+        'if (module.hot) {',
+        '    module.hot.accept();',
+        '    var vdt = module.hot.data && module.hot.data.vdt',
+        '    if (vdt) {',
+        '        vdt.template = module.exports;',
+        '        vdt.update();',
+        '    }',
+        '}'
+    ].join('\n');
 };

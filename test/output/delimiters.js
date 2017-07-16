@@ -49,19 +49,30 @@
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(obj, _Vdt, blocks) {
+	if (false) {
+	    var __this = this;
+	    module.hot.dispose(function(data) {
+	        data.vdt = __this;
+	    })
+	}
+
 	_Vdt || (_Vdt = Vdt);
 	obj || (obj = {});
 	blocks || (blocks = {});
-	var h = _Vdt.miss.h, hc = _Vdt.miss.hc, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
-	__u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className,
-	__o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
-	_setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
-	_setSelectModel = __u.setSelectModel,
-	self = this.data, scope = obj;
-	return h('div', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this))
+	var h = _Vdt.virtualDom.h, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
+	extend = _Vdt.utils.extend, _e = _Vdt.utils.error,self = this.data, scope = obj;
+	return h('div',null, [function() {try {return [a][0]} catch(e) {_e(e)}}.call(this)])
+	}
+	if (false) {
+	    module.hot.accept();
+	    var vdt = module.hot.data && module.hot.data.vdt
+	    if (vdt) {
+	        vdt.template = module.exports;
+	        vdt.update();
+	    }
 	}
 
 /***/ })

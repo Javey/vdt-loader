@@ -14,11 +14,32 @@ require('vdt?noWith!./file.vdt');
 
 Alternately, set this in config file.
 
+For webpack@1.0
+
 ```js
 module: {
     loaders: [
         test: /\.vdt$/,
         loader: 'vdt-loader?noWith&delimiters={{}}'
+    ]
+}
+```
+
+For webpack@2.0/3.0
+
+```js
+module: {
+    rules: [
+        {
+            test: /\.vdt$/,
+            use: {
+                loader: 'vdt-loader',
+                options: {
+                    noWith: true,
+                    delimiters: ['{{', '}}']
+                }
+            }
+        }
     ]
 }
 ```
