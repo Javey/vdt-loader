@@ -30,6 +30,7 @@ module.exports = function(source) {
         '    var __this = this;',
         '    module.hot.dispose(function(data) {',
         '        data.vdt = __this;',
+        '        data.isParent = __this.data !== obj;',
         '    })',
         '}',
         source.substr(pos),
@@ -37,7 +38,9 @@ module.exports = function(source) {
         '    module.hot.accept();',
         '    var vdt = module.hot.data && module.hot.data.vdt',
         '    if (vdt) {',
-        '        vdt.template = module.exports;',
+        '        if (!module.hot.data.isParent) {',
+        '            vdt.template = module.exports;',
+        '        }',
         '        vdt.update();',
         '    }',
         '}'
