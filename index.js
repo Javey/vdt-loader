@@ -5,10 +5,10 @@ var Vdt = require('vdt'),
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
 
-    var query = loaderUtils.parseQuery(this.query);
+    var query = loaderUtils.getOptions(this.query);
     Object.keys(query).forEach(function(key) {
         var value = query[key];
-        if (key === 'delimiters') {
+        if (key === 'delimiters' && typeof value === 'string') {
             query[key] = [value.substring(0, value.length / 2), value.substring(value.length / 2)];
         }
     });

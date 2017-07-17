@@ -13,11 +13,13 @@
   "author": "jiawei23716@sina.com",
   "license": "ISC",
   "dependencies": {
-    "loader-utils": "^0.2.15",
-    "mocha": "^3.4.2",
+    "loader-utils": "^1.1.0"
+  },
+  "peerDependencies": {
     "vdt": "*"
   },
   "devDependencies": {
-    "webpack": "^1.15.0"
+    "webpack": "^1.15.0",
+    "mocha": "^3.4.2"
   }
 }
