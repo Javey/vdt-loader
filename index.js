@@ -5,7 +5,7 @@ var Vdt = require('vdt'),
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
 
-    var query = loaderUtils.getOptions(this.query);
+    var query = loaderUtils.getOptions(this);
     Object.keys(query).forEach(function(key) {
         var value = query[key];
         if (key === 'delimiters' && typeof value === 'string') {
