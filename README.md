@@ -32,13 +32,15 @@ module: {
     rules: [
         {
             test: /\.vdt$/,
-            use: {
-                loader: 'vdt-loader',
-                options: {
-                    noWith: true,
-                    delimiters: ['{{', '}}']
+            use: [
+                {
+                    loader: 'vdt-loader',
+                    options: {
+                        noWith: true,
+                        delimiters: ['{{', '}}']
+                    }
                 }
-            }
+            ]
         }
     ]
 }
