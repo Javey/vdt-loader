@@ -56,21 +56,27 @@
 	    var __this = this;
 	    module.hot.dispose(function(data) {
 	        data.vdt = __this;
+	        data.isParent = __this.data !== obj;
 	    })
 	}
 
 	_Vdt || (_Vdt = Vdt);
 	obj || (obj = {});
 	blocks || (blocks = {});
-	var h = _Vdt.virtualDom.h, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
-	extend = _Vdt.utils.extend, _e = _Vdt.utils.error,self = this.data, scope = obj;
-	return h('div',null, ['\n    ', h('span',null, [function() {try {return [a][0]} catch(e) {_e(e)}}.call(this)]), '\n'])
+	var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
+	__u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className,
+	__o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
+	_setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
+	_setSelectModel = __u.setSelectModel,
+	self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
+	return h('div', null, h('span', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this)))
 	}
 	if (false) {
-	    module.hot.accept();
 	    var vdt = module.hot.data && module.hot.data.vdt
 	    if (vdt) {
-	        vdt.template = module.exports;
+	        if (!module.hot.data.isParent) {
+	            vdt.template = module.exports;
+	        }
 	        vdt.update();
 	    }
 	}

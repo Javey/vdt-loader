@@ -35,7 +35,7 @@ module.exports = function(source) {
         '}',
         source.substr(pos),
         'if (module.hot) {',
-        '    module.hot.accept();',
+        // '    module.hot.accept();',
         '    var vdt = module.hot.data && module.hot.data.vdt',
         '    if (vdt) {',
         '        if (!module.hot.data.isParent) {',
