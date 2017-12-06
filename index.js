@@ -25,7 +25,7 @@ module.exports = function(source) {
     source = Vdt.compile(source, query).source;
     var pos = source.indexOf('\n');
     return [
-        'module.exports = ' + source.substr(0, pos),
+        'export default ' + source.substr(0, pos),
         'if (module.hot) {',
         '    var __this = this;',
         '    module.hot.dispose(function(data) {',
