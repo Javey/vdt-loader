@@ -27,7 +27,7 @@ module.exports = function(source) {
 
     var pos = source.indexOf('\n');
     return [
-        fn.head,
+        fn.head || '',
         'export default ' + source.substr(0, pos),
         'if (module.hot) {',
         '    var __this = this;',
