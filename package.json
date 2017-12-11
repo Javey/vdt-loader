@@ -19,7 +19,7 @@
     "vdt": "*"
   },
   "devDependencies": {
-    "webpack": "^1.15.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "webpack": "^2.7.0"
   }
 }

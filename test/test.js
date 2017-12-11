@@ -14,10 +14,12 @@ var config = {
         filename: '[name].js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.vdt$/,
-                loader: loader
+                use: {
+                    loader: loader,
+                }
             }
         ]
     }
@@ -25,7 +27,7 @@ var config = {
 
 describe('Vdt Loader', function() {
     it('set error delimiters should get error result', function(done) {
-        config.module.loaders[0].loader += '?delimiters={{}}';
+        config.module.rules[0].use.options = {delimiters: ['{{', '}}']};
         webpack(config, function(err, stats) {
             assert.strictEqual(err, null);
             fs.readFile(path.resolve(output, 'delimiters.js'), function(err, data) {
@@ -38,7 +40,7 @@ describe('Vdt Loader', function() {
     });
 
     it('set correct delimiters should get correct result', function(done) {
-        config.module.loaders[0].loader = loader;
+        delete config.module.rules[0].use.options;
         webpack(config, function(err, stats) {
             assert.strictEqual(err, null);
             fs.readFile(path.resolve(output, 'delimiters.js'), function(err, data) {
@@ -50,27 +52,10 @@ describe('Vdt Loader', function() {
         });
     });
 
-    it('don\'t skip whitespace', function(done) {
-        config.entry = {
-            skipWhitespace: path.resolve(__dirname, './input/skipWhitespace.js')
-        };
-        
-        webpack(config, function(err, stats) {
-            assert.strictEqual(err, null);
-            fs.readFile(path.resolve(output, 'skipWhitespace.js'), function(err, data) {
-                assert.strictEqual(err, null);
-                data = data.toString();
-                assert.strictEqual(/\\n/.test(data), true);
-                done();
-            });
-        });
-    });
-
     it('skip whitespace', function(done) {
         config.entry = {
             skipWhitespace: path.resolve(__dirname, './input/skipWhitespace.js')
         };
-        config.module.loaders[0].loader = loader + '?skipWhitespace';
         
         webpack(config, function(err, stats) {
             assert.strictEqual(err, null);
@@ -83,4 +68,31 @@ describe('Vdt Loader', function() {
         });
     });
 
+    it('don\'t skip whitespace', function(done) {
+        config.entry = {
+            skipWhitespace: path.resolve(__dirname, './input/skipWhitespace.js')
+        };
+        config.module.rules[0].use.options = {skipWhitespace: false};
+
+        webpack(config, function(err, stats) {
+            assert.strictEqual(err, null);
+            fs.readFile(path.resolve(output, 'skipWhitespace.js'), function(err, data) {
+                assert.strictEqual(err, null);
+                data = data.toString();
+                assert.strictEqual(/\\n/.test(data), true);
+                done();
+            });
+        });
+    });
+
+    it('es6 import', function(done) {
+        config.entry = {
+            import: path.resolve(__dirname, './input/import.js')
+        };
+
+        webpack(config, function(err, stats) {
+            console.log(stats.toString({colors: true}));
+            done();
+        });
+    });
 });

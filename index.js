@@ -5,7 +5,7 @@ var Vdt = require('vdt'),
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
 
-    var query = loaderUtils.getOptions(this);
+    var query = loaderUtils.getOptions(this) || {};
     Object.keys(query).forEach(function(key) {
         var value = query[key];
         if (key === 'delimiters' && typeof value === 'string') {
@@ -22,9 +22,12 @@ module.exports = function(source) {
         delimiters: ['{', '}']
     }, query);
 
-    source = Vdt.compile(source, query).source;
+    var fn = Vdt.compile(source, query);
+    source = fn.source;
+
     var pos = source.indexOf('\n');
     return [
+        fn.head,
         'export default ' + source.substr(0, pos),
         'if (module.hot) {',
         '    var __this = this;',

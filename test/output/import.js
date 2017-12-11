@@ -63,11 +63,52 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__delimiters__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__delimiters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__delimiters__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks) {
+if (false) {
+    var __this = this;
+    module.hot.dispose(function(data) {
+        data.vdt = __this;
+        data.isParent = __this.data === obj;
+    })
+}
+
+_Vdt || (_Vdt = Vdt);
+obj || (obj = {});
+blocks || (blocks = {});
+var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
+__u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className,
+__o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
+_setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
+_setSelectModel = __u.setSelectModel,
+self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
+
+
+return h(__WEBPACK_IMPORTED_MODULE_0__delimiters___default.a, {'children': 'test', '_context': this})
+});
+if (false) {
+    var vdt = module.hot.data && module.hot.data.vdt
+    if (vdt) {
+        if (module.hot.data.isParent) {
+            vdt.template = module.exports;
+            typeof window !== "undefined" && vdt.update();
+        }
+    }
+}
+
+/***/ }),
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91,7 +132,7 @@ __o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
 _setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
 _setSelectModel = __u.setSelectModel,
 self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
-return h('div', null, ['\n    ', h('span', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this)), '\n'])
+return h('div', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this))
 });
 if (false) {
     var vdt = module.hot.data && module.hot.data.vdt
@@ -104,10 +145,17 @@ if (false) {
 }
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var a = __webpack_require__(0);
+var a = __webpack_require__(1);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
 
 
 /***/ })
