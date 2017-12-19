@@ -42,7 +42,7 @@ module.exports = function(source) {
         '    var vdt = module.hot.data && module.hot.data.vdt',
         '    if (vdt) {',
         '        if (module.hot.data.isParent) {',
-        '            vdt.template = module.exports;',
+        '            vdt.template = module.exports.default;',
         '            typeof window !== "undefined" && vdt.update();',
         '        }',
         '    }',
