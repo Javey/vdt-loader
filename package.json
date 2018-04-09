@@ -1,6 +1,6 @@
 {
   "name": "vdt-loader",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "A loader of vdt for webpack.",
   "main": "index.js",
   "scripts": {
