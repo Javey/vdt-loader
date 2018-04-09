@@ -23,12 +23,11 @@ module.exports = function(source) {
     }, query);
 
     var fn = Vdt.compile(source, query);
-    source = fn.source;
+    // source = fn.source;
 
-    var pos = source.indexOf('\n');
+    // var pos = source.indexOf('\n');
     return [
         fn.head || '',
-        'export default ' + source.substr(0, pos),
-        source.substr(pos),
+        (fn.head ? 'export default ' : 'module.exports = ') + fn.source,
     ].join('\n');
 };

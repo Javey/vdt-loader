@@ -68,20 +68,10 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks) {
-if (false) {
-    var __this = this;
-    module.hot.dispose(function(data) {
-        data.vdt = __this;
-        data.isParent = __this.data === obj;
-    })
-}
-
+module.exports = function(obj, _Vdt, blocks, $callee) {
 _Vdt || (_Vdt = Vdt);
 obj || (obj = {});
 blocks || (blocks = {});
@@ -90,17 +80,8 @@ __u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.classNam
 __o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
 _setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
 _setSelectModel = __u.setSelectModel,
-self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
+self = this.data, $this = this, scope = obj, Animate = self && self.Animate, parent = ($callee || {})._super
 return h('div', null, ['\n    ', h('span', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this)), '\n'])
-});
-if (false) {
-    var vdt = module.hot.data && module.hot.data.vdt
-    if (vdt) {
-        if (module.hot.data.isParent) {
-            vdt.template = module.exports;
-            typeof window !== "undefined" && vdt.update();
-        }
-    }
 }
 
 /***/ }),
