@@ -26,8 +26,14 @@ module.exports = function(source) {
     // source = fn.source;
 
     // var pos = source.indexOf('\n');
+    let head = fn.head||''
+    
+    fn.source = fn.source.replace(/(import\s+?[^\(\)]*?(from)?['"].*?['"](\s*;)?)/g,function(match){
+        head += match;
+        return ''
+    })
     return [
-        fn.head || '',
-        (fn.head ? 'export default ' : 'module.exports = ') + fn.source,
+        head,
+        'export default ' + fn.source
     ].join('\n');
 };

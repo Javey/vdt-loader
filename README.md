@@ -58,3 +58,6 @@ You can also pass querystring like below
     delimiters: ['{{', '}}']
 }))
 ```
+
+## ***Notice***
+1. v1.4.2 之后默认全部导出为es6模块 , 不再支持导出commonjs模块
