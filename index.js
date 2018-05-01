@@ -26,12 +26,14 @@ module.exports = function(source) {
     // source = fn.source;
 
     // var pos = source.indexOf('\n');
-    let head = fn.head||''
+    var head = fn.head || '';
     
-    fn.source = fn.source.replace(/(import\s+?[^\(\)]*?(from)?['"].*?['"](\s*;)?)/g,function(match){
-        head += match;
-        return ''
-    })
+    // 当字符串或者v-raw中存在import语句时，也会被提取，所以先去掉
+    // fn.source = fn.source.replace(/(import\s+?[^\(\)]*?(from)?['"].*?['"](\s*;)?)/g, function(match) {
+        // head += match;
+        // return '';
+    // });
+
     return [
         head,
         'export default ' + fn.source
