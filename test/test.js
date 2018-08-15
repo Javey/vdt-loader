@@ -13,6 +13,7 @@ var config = {
         path: output,
         filename: '[name].js'
     },
+    devtool: '#source-map',
     module: {
         rules: [
             {
@@ -24,6 +25,15 @@ var config = {
         ]
     }
 };
+
+// config.entry = {
+    // import: path.resolve(__dirname, './input/import.js')
+// };
+
+// webpack(config, function(err, stats) {
+    // console.log(stats.toString({colors: true}));
+// });
+
 
 describe('Vdt Loader', function() {
     it('set error delimiters should get error result', function(done) {

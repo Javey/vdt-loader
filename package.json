@@ -13,12 +13,15 @@
   "author": "jiawei23716@sina.com",
   "license": "ISC",
   "dependencies": {
-    "loader-utils": "^1.1.0"
+    "loader-utils": "^1.1.0",
+    "source-map": "^0.7.3"
   },
   "peerDependencies": {
     "vdt": "*"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "intact": "^2.2.0-17",
     "mocha": "^3.4.2",
     "webpack": "^2.7.0"

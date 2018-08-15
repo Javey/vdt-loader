@@ -1,7 +1,8 @@
 var Vdt = require('vdt'),
-    loaderUtils = require('loader-utils');
+    loaderUtils = require('loader-utils'),
+    path = require('path'),
+    sourceMap = require('source-map');
 
-// module.exports = function() {};
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
 
@@ -19,23 +20,51 @@ module.exports = function(source) {
     query = Object.assign({
         noWith: true, 
         onlySource: true, 
-        delimiters: ['{', '}']
+        delimiters: ['{', '}'],
+        sourceMap: false,
+        // sourceMap: this.sourceMap
     }, query);
 
     var fn = Vdt.compile(source, query);
-    // source = fn.source;
 
-    // var pos = source.indexOf('\n');
     var head = fn.head || '';
-    
-    // 当字符串或者v-raw中存在import语句时，也会被提取，所以先去掉
-    // fn.source = fn.source.replace(/(import\s+?[^\(\)]*?(from)?['"].*?['"](\s*;)?)/g, function(match) {
-        // head += match;
-        // return '';
-    // });
+    var content = 'export default ' + fn.source;
+    if (head) {
+        content = head + content;
+    }
 
-    return [
-        head,
-        'export default ' + fn.source
-    ].join('\n');
+    if (query.sourceMap) {
+        var sourceRoot = process.cwd();
+        var filename = path.relative(sourceRoot, this.resourcePath);
+        var map = getSourceMap({
+            mappings: fn.mappings,
+            source: source,
+            filename: filename,
+            sourceRoot: sourceRoot, 
+            offsetLine: head.split(/\n/).length - 1
+        });
+
+        this.callback(null, content, map);
+    } else {
+        this.callback(null, content);
+    }
 };
+
+function getSourceMap(options) {
+    var generator = new sourceMap.SourceMapGenerator({
+        sourceRoot: options.sourceRoot,
+        file: path.basename(options.filename)
+    });
+
+    generator.setSourceContent(options.filename, options.source);
+
+    options.mappings.forEach(function(mapping) {
+        mapping.generated.line += options.offsetLine;
+        if (mapping.original) {
+            mapping.source = options.filename;
+        }
+        generator.addMapping(mapping);
+    });
+
+    return generator.toJSON();
+}
