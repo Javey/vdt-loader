@@ -1,7 +1,15 @@
-var Vdt = require('vdt'),
-    loaderUtils = require('loader-utils'),
+var loaderUtils = require('loader-utils'),
     path = require('path'),
     sourceMap = require('source-map');
+
+var Vdt;
+try {
+    // use Intact.Vdt primarily if exist
+    var Intact = require('intact');
+    Vdt = Intact.Vdt;
+} catch (e) {
+    Vdt = require('vdt');
+}
 
 module.exports = function(source) {
     if (this.cacheable) this.cacheable();
@@ -25,7 +33,7 @@ module.exports = function(source) {
         // sourceMap: this.sourceMap
     }, query);
 
-    var fn = Vdt.compile(source, query);
+    var fn = (query.Vdt || Vdt).compile(source, query);
 
     var head = fn.head || '';
     var content = 'export default ' + fn.source;
