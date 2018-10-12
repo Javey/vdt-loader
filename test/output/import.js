@@ -74,19 +74,23 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__delimiters__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__delimiters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__delimiters__);
-/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks) {
-_Vdt || (_Vdt = Vdt);
-obj || (obj = {});
-blocks || (blocks = {});
-var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
-__u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className,
-__o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
-_setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
-_setSelectModel = __u.setSelectModel,
-self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
 
 
-return h(__WEBPACK_IMPORTED_MODULE_0__delimiters___default.a, {'children': 'test', '_context': this})
+/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks, $callee) {
+    _Vdt || (_Vdt = Vdt);
+    obj || (obj = {});
+    blocks || (blocks = {});
+    var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
+        __u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className, __slice = __u.slice, __noop = __u.noop,
+        __m = __u.map, __o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
+        _setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
+        _setSelectModel = __u.setSelectModel,
+        self = this.data, $this = this, scope = obj, Animate = self && self.Animate, parent = ($callee || {})._super;
+
+    return h(__WEBPACK_IMPORTED_MODULE_0__delimiters___default.a, {
+        'children': 'test',
+        '_context': $this
+    })
 });
 
 /***/ }),
@@ -95,17 +99,18 @@ return h(__WEBPACK_IMPORTED_MODULE_0__delimiters___default.a, {'children': 'test
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks) {
-_Vdt || (_Vdt = Vdt);
-obj || (obj = {});
-blocks || (blocks = {});
-var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
-__u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className,
-__o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
-_setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
-_setSelectModel = __u.setSelectModel,
-self = this.data, scope = obj, Animate = self && self.Animate, parent = this._super
-return h('div', null, function() {try {return [a][0]} catch(e) {_e(e)}}.call(this))
+/* harmony default export */ __webpack_exports__["default"] = (function(obj, _Vdt, blocks, $callee) {
+    _Vdt || (_Vdt = Vdt);
+    obj || (obj = {});
+    blocks || (blocks = {});
+    var h = _Vdt.miss.h, hc = _Vdt.miss.hc, hu = _Vdt.miss.hu, widgets = this && this.widgets || {}, _blocks = {}, __blocks = {},
+        __u = _Vdt.utils, extend = __u.extend, _e = __u.error, _className = __u.className, __slice = __u.slice, __noop = __u.noop,
+        __m = __u.map, __o = __u.Options, _getModel = __o.getModel, _setModel = __o.setModel,
+        _setCheckboxModel = __u.setCheckboxModel, _detectCheckboxChecked = __u.detectCheckboxChecked,
+        _setSelectModel = __u.setSelectModel,
+        self = this.data, $this = this, scope = obj, Animate = self && self.Animate, parent = ($callee || {})._super;
+
+    return h('div', null, function() {try {return (a)} catch(e) {_e(e)}}.call($this))
 });
 
 /***/ }),

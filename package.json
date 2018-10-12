@@ -22,7 +22,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "intact": "^2.2.0-17",
+    "intact": "git+https://github.com/Javey/Intact.git",
     "mocha": "^3.4.2",
     "webpack": "^2.7.0"
   }
