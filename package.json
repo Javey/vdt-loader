@@ -1,29 +1,46 @@
 {
   "name": "vdt-loader",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "A loader of vdt for webpack.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/index.js"
+  ],
   "scripts": {
-    "test": "mocha test/test.js",
+    "test": "ts-mocha src/__tests__/index.ts",
+    "snapshot": "UPDATE=1 npm run test",
+    "build": "tsc --build",
+    "prerelease": "npm run build",
     "release": "npm run release-patch",
-    "release-patch": "git checkout master && npm version patch && git push origin master --tags && npm publish",
-    "release-minor": "git checkout master && npm version minor && git push origin master --tags && npm publish",
-    "release-major": "git checkout master && npm version major && git push origin master --tags && npm publish"
+    "release-patch": "npm version patch && git push --tags && npm publish",
+    "release-minor": "npm version minor && git push --tags && npm publish",
+    "release-major": "npm version major && git push --tags && npm publish"
   },
   "author": "jiawei23716@sina.com",
   "license": "ISC",
   "dependencies": {
-    "loader-utils": "^1.1.0",
+    "loader-utils": "^2.0.0",
+    "schema-utils": "^3.0.0",
     "source-map": "^0.7.3"
   },
   "peerDependencies": {
-    "vdt": "*"
+    "vdt": "^3.0.0-beta.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "intact": "git+https://github.com/Javey/Intact.git",
-    "mocha": "^3.4.2",
-    "webpack": "^2.7.0"
+    "@babel/core": "^7.14.0",
+    "@types/loader-utils": "^2.0.2",
+    "@types/memory-fs": "^0.3.3",
+    "@types/mocha": "^8.2.2",
+    "@types/prettier": "^2.2.3",
+    "@types/terser-webpack-plugin": "^5.0.3",
+    "babel-loader": "^8.2.2",
+    "intact": "^3.0.0-beta.0",
+    "memory-fs": "^0.5.0",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2"
   }
 }

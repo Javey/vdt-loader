@@ -1,0 +1,3 @@
+import {Transition} from 'intact';
+
+<Transition><div>test</div></Transition>
