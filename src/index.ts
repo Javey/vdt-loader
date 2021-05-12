@@ -1,4 +1,4 @@
-import {Parser, Visitor, Options} from 'vdt';
+import {Parser, Visitor, Options} from 'vdt-compiler';
 import {getOptions} from 'loader-utils';
 import {validate} from 'schema-utils';
 
@@ -7,7 +7,7 @@ try {
     require('intact');
     defaultModuleName = 'intact';
 } catch (e) {
-    defaultModuleName = 'vdt/runtime';
+    defaultModuleName = 'vdt';
 }
 
 const schema = {

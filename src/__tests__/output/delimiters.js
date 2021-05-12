@@ -1,5 +1,7 @@
 (() => {
   "use strict";
+  Object.create;
+  Object.create;
   function index_esm_isNullOrUndefined(o) {
     return null == o;
   }
@@ -44,7 +46,7 @@
         (this.newPosition = null);
     };
   })();
-  function createElementVNode(
+  function index_esm_createElementVNode(
     type,
     tag,
     children,
@@ -197,9 +199,10 @@
       (index_esm_prototype._moveCb = void 0);
   }
   Object.getPrototypeOf;
+  Boolean;
   function delimiters($props, $blocks) {
     $blocks || ($blocks = {}), $props || ($props = {});
-    return createElementVNode(2, "div", a, 0);
+    return index_esm_createElementVNode(2, "div", a, 0);
   }
   delimiters(), delimiters();
 })();

@@ -917,20 +917,21 @@ inherits@2, inherits@~2.0.3:
   resolved "https://registry.npm.taobao.org/inherits/download/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha1-D6LGT5MpF8NDOg3tVTY6rjdBa3w=
 
-intact-shared@^3.0.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.nlark.com/intact-shared/download/intact-shared-3.0.0-beta.0.tgz#949a173e385fa18a7806b98bb9ae171f753c2f1f"
-  integrity sha1-lJoXPjhfoYp4BrmLua4XH3U8Lx8=
+intact-shared@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/intact-shared/-/intact-shared-3.0.0-beta.3.tgz#f67f9654ef02577d84a7be99b5f314ec9895d2e6"
+  integrity sha512-zx4MxrvgTu0Y6S/QjdU+nYqhwIaLkzeYaWZPB20v6JY3KlLE4s64Tf6J6m1JbWZ2DtvuX/ddS1xcmy7stApxGA==
 
-intact@^3.0.0-beta.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.nlark.com/intact/download/intact-3.0.0-beta.0.tgz#bd5116d75b7d6c9a916879c8d6897359105542cf"
-  integrity sha1-vVEW11t9bJqRaHnI1olzWRBVQs8=
+intact@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/intact/-/intact-3.0.0-beta.3.tgz#683fa0450355f3cfdd03b801506dca342b5f1e1c"
+  integrity sha512-Bo3K4a5zrim/SYwWd5YbT1HbgdoUz3RbLP/RqNPEUcGKW2gvhZSx6slLfFxMkBukjGZwFDjtmLSatRB+rfAwMQ==
   dependencies:
-    intact-shared "^3.0.0"
-    misstime "^3.0.0"
+    intact-shared "^3.0.0-beta.3"
+    misstime "^3.0.0-beta.3"
     tslib "^2.2.0"
-    vdt "^3.0.0"
+    vdt "^3.0.0-beta.3"
+    vdt-compiler "^3.0.0-beta.3"
 
 is-binary-path@~2.1.0:
   version "2.1.0"
@@ -1124,12 +1125,12 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz?cache=0&sync_timestamp=1602337228360&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
-misstime@^3.0.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.nlark.com/misstime/download/misstime-3.0.0-beta.0.tgz#b96f2311ca7ffc6c9a18128acbaf52b40ec1d302"
-  integrity sha1-uW8jEcp//GyaGBKKy69StA7B0wI=
+misstime@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/misstime/-/misstime-3.0.0-beta.3.tgz#b3d17300a616b90ba7a7d88aa1c356122392fe80"
+  integrity sha512-dLM2l0BY7c/Z9/pEo+Zmy3+SmOo15F+ziHFsFLIZh2YoldU02WsxGdnVNNzhS5jLNddxhy5PT6QoQPBF3Oz1tg==
   dependencies:
-    intact-shared "^3.0.0"
+    intact-shared "^3.0.0-beta.3"
 
 mkdirp@^0.5.1:
   version "0.5.5"
@@ -1260,11 +1261,6 @@ pkg-dir@^4.1.0:
   integrity sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=
   dependencies:
     find-up "^4.0.0"
-
-prettier-webpack-plugin@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npm.taobao.org/prettier-webpack-plugin/download/prettier-webpack-plugin-1.2.0.tgz#4a5635f054741160936c7f509f0a9b1f928e5550"
-  integrity sha1-SlY18FR0EWCTbH9QnwqbH5KOVVA=
 
 prettier@^2.3.0:
   version "2.3.0"
@@ -1548,13 +1544,22 @@ util-deprecate@~1.0.1:
   resolved "https://registry.nlark.com/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-vdt@^3.0.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.nlark.com/vdt/download/vdt-3.0.0-beta.0.tgz#f5dfad84d5c9e87c4231c9b6deb07f566bf0e1bf"
-  integrity sha1-9d+thNXJ6HxCMcm23rB/Vmvw4b8=
+vdt-compiler@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/vdt-compiler/-/vdt-compiler-3.0.0-beta.3.tgz#7f777b2303c03994ce546d67faee846db1a3a030"
+  integrity sha512-PGheFm+H5QDwdAGu1AHjJh8XmjRwsOU75asqgUplbPlx5RqLxPlIFb6f4Qo2/pPlhkF/R65PSaYCa2O6WRW+zQ==
   dependencies:
-    intact-shared "^3.0.0"
-    misstime "^3.0.0"
+    intact-shared "^3.0.0-beta.3"
+    misstime "^3.0.0-beta.3"
+    tslib "^2.2.0"
+
+vdt@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/vdt/-/vdt-3.0.0-beta.3.tgz#b6727b484ff290bca3192c6de4830000dea66dc4"
+  integrity sha512-nBBAzaHxBHaN8cV9V+VXUHf40YwvhwtR4uyHWU/HBE/UID/Cw2dyjDf65v67Xph/+g8anoQwaa64BTlzmoU0Cg==
+  dependencies:
+    intact-shared "^3.0.0-beta.3"
+    misstime "^3.0.0-beta.3"
     tslib "^2.2.0"
 
 watchpack@^2.0.0:

@@ -1,5 +1,7 @@
 (() => {
   "use strict";
+  Object.create;
+  Object.create;
   function index_esm_isNullOrUndefined(o) {
     return null == o;
   }
@@ -15,6 +17,9 @@
   function index_esm_isStringOrNumber(o) {
     var type = typeof o;
     return "string" === type || "number" === type;
+  }
+  function index_esm_isFunction(o) {
+    return "function" == typeof o;
   }
   Object.prototype.hasOwnProperty;
   var hasDocumentAvailable = "undefined" != typeof document;
@@ -44,7 +49,7 @@
         (this.newPosition = null);
     };
   })();
-  function createElementVNode(
+  function index_esm_createElementVNode(
     type,
     tag,
     children,
@@ -201,16 +206,17 @@
     component.set(target.$M, target.value);
   }
   Object.getPrototypeOf;
-  !(function ($props, $blocks) {
+  Boolean;
+  (function ($props, $blocks) {
     var data, event;
     $blocks || ($blocks = {}),
       $props || ($props = {}),
-      createElementVNode(64, "input", null, 1, null, {
+      index_esm_createElementVNode(64, "input", null, 1, null, {
         "$model:value": "a",
         "ev-$model:input":
           ((data = this),
           (event = setTextModel),
-          "function" == typeof event ? { data: data, event: event } : null),
+          index_esm_isFunction(event) ? { data: data, event: event } : null),
         value: this.get("a"),
       });
   })();

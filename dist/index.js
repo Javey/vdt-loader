@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var vdt_1 = require("vdt");
+var vdt_compiler_1 = require("vdt-compiler");
 var loader_utils_1 = require("loader-utils");
 var schema_utils_1 = require("schema-utils");
 var defaultModuleName;
@@ -9,7 +9,7 @@ try {
     defaultModuleName = 'intact';
 }
 catch (e) {
-    defaultModuleName = 'vdt/runtime';
+    defaultModuleName = 'vdt';
 }
 var schema = {
     type: 'object',
@@ -26,8 +26,8 @@ var schema = {
 function default_1(source) {
     var options = loader_utils_1.getOptions(this);
     schema_utils_1.validate(schema, options);
-    var parser = new vdt_1.Parser(source, { delimiters: options.delimiters || ['{', '}'] });
-    var visitor = new vdt_1.Visitor(parser.ast);
+    var parser = new vdt_compiler_1.Parser(source, { delimiters: options.delimiters || ['{', '}'] });
+    var visitor = new vdt_compiler_1.Visitor(parser.ast);
     return visitor.getModuleCode(options.moduleName || defaultModuleName);
 }
 exports.default = default_1;

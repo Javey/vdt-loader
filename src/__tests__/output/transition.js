@@ -1,5 +1,57 @@
 (() => {
   "use strict";
+  /*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+  var extendStatics = function (d, b) {
+    return (extendStatics =
+      Object.setPrototypeOf ||
+      ({ __proto__: [] } instanceof Array &&
+        function (d, b) {
+          d.__proto__ = b;
+        }) ||
+      function (d, b) {
+        for (var p in b)
+          Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
+      })(d, b);
+  };
+  function tslib_es6_extends(d, b) {
+    if ("function" != typeof b && null !== b)
+      throw new TypeError(
+        "Class extends value " + String(b) + " is not a constructor or null"
+      );
+    function __() {
+      this.constructor = d;
+    }
+    extendStatics(d, b),
+      (d.prototype =
+        null === b
+          ? Object.create(b)
+          : ((__.prototype = b.prototype), new __()));
+  }
+  var __assign = function () {
+    return (__assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++)
+          for (var p in (s = arguments[i]))
+            Object.prototype.hasOwnProperty.call(s, p) && (t[p] = s[p]);
+        return t;
+      }).apply(this, arguments);
+  };
+  Object.create;
+  Object.create;
   function isEventProp(propName) {
     return "ev-" === propName.substr(0, 3);
   }
@@ -121,8 +173,7 @@
   function callAll(mountedQueue) {
     for (var i = 0; i < mountedQueue.length; i++) mountedQueue[i]();
   }
-  var index_esm_compile,
-    xlinkNS = "http://www.w3.org/1999/xlink",
+  var xlinkNS = "http://www.w3.org/1999/xlink",
     xmlNS = "http://www.w3.org/XML/1998/namespace",
     namespaces = {
       "xlink:href": xlinkNS,
@@ -1737,59 +1788,8 @@
       (index_esm_prototype._leaveCb = void 0),
       (index_esm_prototype._moveCb = void 0);
   }
+  var compile;
   Object.getPrototypeOf;
-  /*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-  var extendStatics = function (d, b) {
-    return (extendStatics =
-      Object.setPrototypeOf ||
-      ({ __proto__: [] } instanceof Array &&
-        function (d, b) {
-          d.__proto__ = b;
-        }) ||
-      function (d, b) {
-        for (var p in b)
-          Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
-      })(d, b);
-  };
-  function tslib_es6_extends(d, b) {
-    if ("function" != typeof b && null !== b)
-      throw new TypeError(
-        "Class extends value " + String(b) + " is not a constructor or null"
-      );
-    function __() {
-      this.constructor = d;
-    }
-    extendStatics(d, b),
-      (d.prototype =
-        null === b
-          ? Object.create(b)
-          : ((__.prototype = b.prototype), new __()));
-  }
-  var __assign = function () {
-    return (__assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++)
-          for (var p in (s = arguments[i]))
-            Object.prototype.hasOwnProperty.call(s, p) && (t[p] = s[p]);
-        return t;
-      }).apply(this, arguments);
-  };
-  Object.create;
-  Object.create;
   function get(object, path) {
     if (hasOwn.call(object, path) || !index_esm_isString(path))
       return object[path];
@@ -2175,7 +2175,7 @@ PERFORMANCE OF THIS SOFTWARE.
         var template = _this.constructor.template;
         index_esm_isFunction(template)
           ? (_this.$template = template)
-          : (_this.$template = index_esm_compile(template)),
+          : (_this.$template = compile(template)),
           (_this.$defaults = _this.defaults()),
           (_this.props = __assign({}, _this.$defaults));
         var triggerReceiveEvents = null;
@@ -2852,7 +2852,7 @@ PERFORMANCE OF THIS SOFTWARE.
   }
   Transition.typeDefs = TransitionTypeDefs;
   var $props, $blocks, tag, props, key, ref;
-  (index_esm_compile = function () {}),
+  (compile = function () {}),
     $blocks || ($blocks = {}),
     $props || ($props = {}),
     (tag = Transition),
